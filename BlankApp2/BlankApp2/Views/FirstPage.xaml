@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             x:Class="BlankApp2.Views.FirstPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Favourite Color:"
+                       WidthRequest="500"
+                       HorizontalOptions="Center"
+                       VerticalOptions="Center"/>
+            <Entry Text="{Binding FavColor}"
+                       WidthRequest="500"
+                       HorizontalOptions="Center"
+                       VerticalOptions="Center"/>
+            <Label Text="Favourite Band:"
+                       WidthRequest="500"
+                       HorizontalOptions="Center"
+                       VerticalOptions="Center"/>
+            <Entry Text="{Binding FavBand}"
+                       WidthRequest="500"
+                       HorizontalOptions="Center"
+                       VerticalOptions="Center"/>
+            <Label Text="Xamarin?"
+                       WidthRequest="500"
+                       HorizontalOptions="Center"
+                       VerticalOptions="Center"/>
+            <Switch IsToggled="{Binding LikeXamarin}" 
+                       WidthRequest="500"
+                       HorizontalOptions="Center"
+                       VerticalOptions="Center"/>
+            <Button Text="Next"
+                        HorizontalOptions="Center"
+                        VerticalOptions="Center"
+                        Command="{Binding NextPage}"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

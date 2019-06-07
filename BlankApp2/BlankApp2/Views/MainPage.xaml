@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BlankApp2.Views.MainPage"
+             xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+             prism:ViewModelLocator.AutowireViewModel="True">
+
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Command:"
+                       WidthRequest="500"
+                       HorizontalOptions="Center"
+                       VerticalOptions="Center"/>
+            <Entry Text="{Binding Command}"
+                       WidthRequest="500"
+                       HorizontalOptions="Center"
+                       VerticalOptions="Center"/>
+            <Button Text="Send"
+                        HorizontalOptions="Center"
+                        VerticalOptions="Center"
+                        Command="{Binding SendClicked}"/>
+            <ListView x:Name="MyListView"
+                      HasUnevenRows="True"
+                      ItemsSource="{Binding Items}"
+                      CachingStrategy="RecycleElement">
+
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout>
+                                <Label  Text="{Binding ID}" TextColor="White"/>
+                                <Label Text="{Binding Content}" TextColor="White"/>
+                               
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
